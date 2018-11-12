@@ -1,0 +1,23 @@
+<html>
+
+   <head>
+      <script type="text/javascript" src="java.js" ></script>
+   </head>
+   
+   <body>
+   Ammo type : 
+    <select id = "ammoID">
+      <option value="502">502</option>
+      <option value="751">751</option>
+      <option value="469">469</option>
+      <option value="551">551</option>
+    </select>
+  <br>
+   Distance to target [m] :<input type="number" id="distanceID" name="distance" min="10" max="1000" step="10" value="300"/>
+  <hr>           
+  <br>           
+     
+  <input type="button" onclick="Calc(distanceID, ammoID)" value="Calculate" />
+  <p id="elevationID"> Elevation [mRad] : - </p>
+   </body>
+</html>
