@@ -9,6 +9,7 @@ function  generatePolynomVector502()
         polynomArray[4] = 0.142376160990732;
 }
 
+// 751
 function  generatePolynomVector751()
 {
         polynomArray[0] = -3.798790163038278e-11;
@@ -18,6 +19,16 @@ function  generatePolynomVector751()
         polynomArray[4] = 0.202631578947401;
 }
 
+function  generatePolynomVector751WindDrift()
+{
+        polynomArray[0] = -0.000000000002568;
+        polynomArray[1] = 0.000000007039676;
+        polynomArray[2] = -0.000005935646086;
+        polynomArray[3] = 0.000282746980458;
+        polynomArray[4] = -0.011843395252836;
+}
+
+// 469
 function  generatePolynomVector469()
 {
         polynomArray[0] = 4.752193795575646e-12;
@@ -108,6 +119,8 @@ function Calc(distance, ammo)
      //document.write("Ammo type not implemented");
      alert("Ammo type NOT implemented")
    }
+   
+   
    
    return 1;
 }

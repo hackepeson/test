@@ -17,6 +17,7 @@ p    {color: black;}
     position: absolute;
     top: 50%;
 }
+
 </style>
    
    <body>
@@ -32,8 +33,6 @@ p    {color: black;}
    Distance to target [m] :<input type="number" id="distanceID" name="distance" min="10" max="1000" step="10" value="300"/>
   <hr>           
   <br>           
- 
-  
   <div class="wrapper">
     <input type="button" onclick="Calc(distanceID, ammoID)" value="Calculate" />
   </div>
@@ -41,5 +40,10 @@ p    {color: black;}
 <div class="wrapper">  
   <img src="cg.gif" align="middle" width="250">
 </div> 
+
+<div class="slidecontainer">
+  <input type="range" min="1" max="6" value="2" class="slider" step="0.1" id="myRange">
+</div>
+
    </body>
 </html>
