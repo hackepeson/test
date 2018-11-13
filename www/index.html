@@ -5,6 +5,19 @@
    </head>
    
    <body background="camo.jpg">
+   <style>
+h1   {color: black;text-align: center}
+p    {color: black;}
+
+.wrapper {
+    text-align: center;
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+}
+</style>
    
    <body>
    <H1> CG </H1>
@@ -19,10 +32,14 @@
    Distance to target [m] :<input type="number" id="distanceID" name="distance" min="10" max="1000" step="10" value="300"/>
   <hr>           
   <br>           
-     
-  <input type="button" onclick="Calc(distanceID, ammoID)" value="Calculate" />
-  <p id="elevationID"> Elevation [mRad] : - </p>
+ 
   
-  <img src="cg.gif">
+  <div class="wrapper">
+    <input type="button" onclick="Calc(distanceID, ammoID)" value="Calculate" />
+  </div>
+  <p id="elevationID"> Elevation [mRad] : - </p>
+<div class="wrapper">  
+  <img src="cg.gif" align="middle" width="250">
+</div> 
    </body>
 </html>
