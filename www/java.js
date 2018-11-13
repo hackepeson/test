@@ -1,4 +1,5 @@
 var polynomArray = [0.0, 0.0, 0.0, 0.0, 0.0];
+var polynomArrayWind = [0.0, 0.0, 0.0, 0.0, 0.0];
 
 function  generatePolynomVector502()
 {
@@ -21,11 +22,11 @@ function  generatePolynomVector751()
 
 function  generatePolynomVector751WindDrift()
 {
-        polynomArray[0] = -0.000000000002568;
-        polynomArray[1] = 0.000000007039676;
-        polynomArray[2] = -0.000005935646086;
-        polynomArray[3] = 0.000282746980458;
-        polynomArray[4] = -0.011843395252836;
+        polynomArrayWind[0] = -0.000000000002568;
+        polynomArrayWind[1] = 0.000000007039676;
+        polynomArrayWind[2] = -0.000005935646086;
+        polynomArrayWind[3] = 0.000282746980458;
+        polynomArrayWind[4] = -0.011843395252836;
 }
 
 // 469
@@ -64,6 +65,21 @@ function calcElevation(distance)
   sum += polynomArray[4];
   return sum;
 }    
+function calcWindDrift(wind)
+{
+  
+  var sum = 0.0;
+  var i;
+  
+  for (i=0; i<4; i++)
+  {
+    //sum = (sum + polynomArray[i])) * distance;
+    sum = (sum + polynomArrayWind[i]);
+    sum = sum * wind;
+  }
+  sum += polynomArrayWind[4];
+  return sum;
+}
 
 function roundOf(n, p) {
     const n1 = n * Math.pow(10, p + 1);
@@ -75,6 +91,12 @@ function roundOf(n, p) {
     return n2 / Math.pow(10, p);
 }
 
+function updateTextInput(val) 
+{
+  document.getElementById('textInput').value=roundOf(val,1);
+  document.getElementById('windDrift').value=roundOf(calcWindDrift(document.getElementById('distanceID').value)*val,2); 
+  
+}
 
 function Calc(distance, ammo) 
 {
@@ -91,16 +113,17 @@ function Calc(distance, ammo)
    switch (ammo.value)
    {
    case '502':
-    generatePolynomVector502();
+    generatePolynomVector502()
     break;
     case '751':
-    generatePolynomVector751();
+    generatePolynomVector751()
+    generatePolynomVector751WindDrift()
     break;
     case '469':
-    generatePolynomVector469();
+    generatePolynomVector469()
     break;
     case '551':
-    generatePolynomVector551();
+    generatePolynomVector551()
     break;
     default :     
     ammoAvailable = 0;
