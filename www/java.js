@@ -93,7 +93,6 @@ function roundOf(n, p) {
 
 function updateTextInput(val) 
 {
-  document.getElementById('textInput').value=roundOf(val,1);
   document.getElementById('windDrift').value=roundOf(calcWindDrift(document.getElementById('distanceID').value)*val,2); 
   
 }
