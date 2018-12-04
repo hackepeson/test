@@ -1,43 +1,48 @@
 <html>
 
-   <head>
-      <script type="text/javascript" src="java.js" ></script>
-   </head>
-   
-   <body background="camo.jpg">
-   <style>
-     h1   {color: black;text-align: center}
-p    {color: black;}
+<head>
+  <script type="text/javascript" src="js/cg_java.js" ></script>
+  <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+</head>
 
-.wrapper {
-    text-align: center;
+<body background="camo.jpg">
+ <style>
+ h1   {color: black;text-align: center}
+ p    {color: black;}
+
+ .wrapper {
+  text-align: center;
 }
 
 .button {
-    position: absolute;
-    top: 50%;
+  position: absolute;
+  top: 50%;
 }
 
 </style>
-   
-   <body>
-   <H1> CG </H1>
-   Ammo type : 
-    <select id = "ammoID">
-      <option value="502">502</option>
-      <option value="751">751</option>
-      <option value="469">469</option>
-      <option value="551">551</option>
-    </select>
-  <br>
-   Distance to target [m] :<input type="number" id="distanceID" name="distance" min="10" max="1000" step="10" value="300"/>
-             
-  <br>           
-  <div class="wrapper">
-    <input type="button" onclick="Calc(distanceID, ammoID)" value="Calculate" />
-  </div>
-  <p id="elevationID"> Elevation [mRad] : - </p>
-  <hr>
+
+<body>
+
+ <H1> CG </H1>
+ Ammo type : 
+ <select id = "ammoID">
+  <option value="502">502</option>
+  <option value="751">751</option>
+  <option value="469">469</option>
+  <option value="551">551</option>
+</select>
+<br>
+Distance to target [m] :<input type="number" id="distanceID" name="distance" min="10" max="1000" step="10" value="300"/>
+
+<br>           
+<div class="wrapper">
+  <input type="button" onclick="Calc(distanceID, ammoID)" value="Calculate" />
+</div>
+<p id="elevationID"> Elevation [mRad] : - </p>
+
+<img src="502.png" id="ammoPicture" align="middle" width="50">
+
+<hr>
 <div class="wrapper">  
   <img src="cg.gif" align="middle" width="250">
 </div> 
@@ -45,8 +50,23 @@ p    {color: black;}
 <!--<input type="range" name="rangeInput" min="-10" max="10" step = "0.1" onchange="updateTextInput(this.value);">-->
 Crosswind [m/s] :<input type="number" name="crossWind" min="-10" max="10" step="0.1" value="0" onchange="updateTextInput(this.value);"/>
 <p>
-Wind drift [m] <input type="text"  id="windDrift" value="">
-<plugin name="cordova-plugin-device-motion" spec="~2.0.1" />
+  Wind drift [m] <input type="text"  id="windDrift" value="">
 
-   </body>
+
+  <script> 
+    $(document).ready(function()
+    {
+      $("#ammoID").on('change',function()
+      {
+       // alert(this.value);
+        var picurl = this.value + '.png';
+        $("#ammoPicture").fadeOut('slow', function() 
+        {
+          document.getElementById("ammoPicture").src=picurl;
+          $("#ammoPicture").fadeIn(1000);  
+        });
+      });
+    });
+  </script>
+</body>
 </html>
