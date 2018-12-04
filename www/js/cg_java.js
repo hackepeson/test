@@ -10,6 +10,15 @@ function  generatePolynomVector502()
         polynomArray[4] = 0.142376160990732;
 }
 
+function  generatePolynomVector502WindDrift()
+{
+        polynomArrayWind[0] = -0.000000000000114;
+        polynomArrayWind[1] = 0.000000000945537;
+        polynomArrayWind[2] = 0.000001195042870;
+        polynomArrayWind[3] = 0.000119028236425;
+        polynomArrayWind[4] = -0.007670278637770;
+}
+
 // 751
 function  generatePolynomVector751()
 {
@@ -38,6 +47,16 @@ function  generatePolynomVector469()
         polynomArray[3] = 0.087785959996930;
         polynomArray[4] = -0.079426129426086;
 }
+
+function  generatePolynomVector469WindDrift()
+{
+        polynomArrayWind[0] = -0.000000000000146;
+        polynomArrayWind[1] = 0.000000001112368;
+        polynomArrayWind[2] = -0.000000687559989;
+        polynomArrayWind[3] = 0.000619275332511;
+        polynomArrayWind[4] = -0.037662337662338;
+}
+
 
 function  generatePolynomVector551()
 {
@@ -91,7 +110,7 @@ function roundOf(n, p) {
     return n2 / Math.pow(10, p);
 }
 
-function updateTextInput(val) 
+function updateWindCalc(val) 
 {
   document.getElementById('windDrift').value=roundOf(calcWindDrift(document.getElementById('distanceID').value)*val,2); 
   
@@ -113,6 +132,7 @@ function Calc(distance, ammo)
    {
    case '502':
     generatePolynomVector502()
+    generatePolynomVector502WindDrift()
     break;
     case '751':
     generatePolynomVector751()
@@ -120,6 +140,7 @@ function Calc(distance, ammo)
     break;
     case '469':
     generatePolynomVector469()
+    generatePolynomVector469WindDrift()
     break;
     case '551':
     generatePolynomVector551()
