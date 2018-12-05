@@ -17,6 +17,8 @@
       Håkan Pettersson
   </author>
 
+  <preferences name="SplasgScreenDelay" value="1000" />
+
   <icon src="images/icon.png" />
   <splash src="images/icon.png" />
 
