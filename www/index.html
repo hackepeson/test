@@ -5,7 +5,7 @@
   <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 </head>
 
-<body background="camo.jpg">
+<body background="images/camo.jpg">
  <style>
  h1   {color: black;text-align: center}
  p    {color: black;}
@@ -42,19 +42,19 @@ Distance to target [m] :<input type="number" id="distanceID" name="distance" min
 -->
 <p id="elevationID"> Elevation [mRad] : - </p>
 
-<img src="502t.png" id="ammoPicture" align="middle" width="150">
+<img src="images/502t.png" id="ammoPicture" align="middle" height="40">
 <p>
 <!--
 <hr>
 <div class="wrapper">  
-  <img src="cg.gif" align="middle" width="250">
+  <img src="images\cg.gif" align="middle" width="250">
 </div> 
 -->
 <!--<input type="range" name="rangeInput" min="-10" max="10" step = "0.1" onchange="updateTextInput(this.value);">-->
 <!--Crosswind [m/s] :<input type="number" name="crossWind" min="-10" max="10" step="0.1" value="0" onchange="updateWindCalc(this.value);"/>-->
 Crosswind [m/s] :<input type="number" id="windSpeedID" name="crossWind" min="-10" max="10" step="0.1" value="0"/>
 <p>
-Wind drift [m] <input type="text"  id="windDrift" value="">
+  Wind drift [m] <input type="text"  id="windDrift" value="">
 
 
   <script> 
@@ -66,7 +66,7 @@ Wind drift [m] <input type="text"  id="windDrift" value="">
         Calc(distanceID, ammoID);
         updateWindCalc(windSpeedID.value);
        // alert(this.value);
-       var picurl = this.value + 't.png';
+       var picurl = 'images/' + this.value + 't.png';
        $("#ammoPicture").fadeOut('slow', function() 
        {
         document.getElementById("ammoPicture").src=picurl;
@@ -79,9 +79,9 @@ Wind drift [m] <input type="text"  id="windDrift" value="">
         updateWindCalc(windSpeedID.value);
       });
       $("#windSpeedID").on("change", function()
-        {
-          updateWindCalc(windSpeedID.value);
-        });
+      {
+        updateWindCalc(windSpeedID.value);
+      });
 
     });
   </script>

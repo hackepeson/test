@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id          = "com.phonegap.example"
+    versionCode = "10"
+    version     = "0.0.1" >
+
+<!-- versionCode is optional and Android only -->
+
+  <name>CG Range calculator</name>
+
+  <description>
+      Calculates the aiming angle for CG depending of the range
+  </description>
+
+  <author href="https://build.phonegap.com" email="hakan.ne.pettersson@saabgroup.com">
+      Håkan Pettersson
+  </author>
+
+  <icon src="images/icon.png" />
+  <splash src="images/icon.png" />
+
+  <plugin name="cordova-plugin-splashscreen" source="npm" />
+
+</widget>
