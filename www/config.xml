@@ -17,7 +17,7 @@
       Håkan Pettersson
   </author>
 
-  <splash src="images/splash.png" />
+  <splash src="splash.png" />
 
   <preferences name="SplashScreenDelay" value="1000" />
 
