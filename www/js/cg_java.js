@@ -57,6 +57,27 @@ function  generatePolynomVector469WindDrift()
         polynomArrayWind[4] = -0.037662337662338;
 }
 
+// 751 new
+function  generatePolynomVector751New()
+{
+        polynomArray[0] = -0.000000000039404;
+        polynomArray[1] = 0.000000128429775;
+        polynomArray[2] = -0.000137321968677;
+        polynomArray[3] = 0.112472504269372;
+        polynomArray[4] = 0.206540247678052;
+}
+
+function  generatePolynomVector751NewWindDrift()
+{
+        polynomArrayWind[0] = -2.50478264948582e-12;
+        polynomArrayWind[1] = 6.73306969275467e-09;
+        polynomArrayWind[2] = -5.49478451563689e-06;
+        polynomArrayWind[3] = 9.33339318322034e-05;
+        polynomArrayWind[4] = 1.41898864822642e-05;
+}
+
+
+
 
 function  generatePolynomVector551()
 {
@@ -137,6 +158,10 @@ function Calc(distance, ammo)
     case '751':
     generatePolynomVector751()
     generatePolynomVector751WindDrift()
+    break;
+    case '751 (new)':
+    generatePolynomVector751New()
+    generatePolynomVector751NewWindDrift()
     break;
     case '469':
     generatePolynomVector469()
